@@ -2,12 +2,9 @@ extends layout
 
 block content
   h1(style='text-align: center;') Mannat Poori Ho
-  .circle(style='margin-left:5%;')
-    a(href='/mannat') Mannat
-  .circle
-    a(href='/gurus') Gurus
-  .circle
-    a(href='/donate') Donate
+  .circle(style='margin-left:5%;',href='/mannat') Mannat
+  .circle(href='/gurus') Gurus
+  .circle(href='/donate') Donate
 
   
   if user
