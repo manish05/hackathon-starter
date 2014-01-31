@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Place JavaScript code here...
-	if($("#dataTable")!=undefined){
+	if($("#dataTable")!='undefined'){
 	
 	 alert($("#dataTable").html());
 	 
