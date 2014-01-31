@@ -13,6 +13,15 @@
     text-align: center;
     font-size: 60px;
 }
+.circle a{
+	color:#eee;
+	text-decoration: none !important;
+}
+
+.circle a:hover{
+	color:#aaa;
+	text-decoration: none !important;
+}
 .circle:hover {
     background:#222;
     color:#eee;
