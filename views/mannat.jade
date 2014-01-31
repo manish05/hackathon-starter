@@ -2,7 +2,11 @@ extends layout
 
 block content
   h1(style='text-align: center;') Mannat
-  
+  table#dataTable
+  script
+      $(document).ready(function(){
+        
+		});
   if user
     .alert.alert-success.animated.fadeInUp
       i.fa.fa-check

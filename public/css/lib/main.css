@@ -27,3 +27,12 @@
     color:#eee;
 	text-decoration:none;
 }
+
+
+#dataTable{
+	margin-top:20px;
+	margin-left:10%;
+	width:1000px;
+	height:1000px;
+	outline:1px black solid;
+}
