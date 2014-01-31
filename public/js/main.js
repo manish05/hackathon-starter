@@ -11,5 +11,6 @@ $(document).ready(function() {
 			}
 			content+="</tr>";
 		}
+		$("#dataTable").(content);
 	}
 });
