@@ -2,11 +2,8 @@ extends layout
 
 block content
   h1(style='text-align: center;') Mannat
-  table#dataTable
-  script
-      $(document).ready(function(){
-        $("#dataTable").html("tr td XXX");
-		});
+  table#dataTable tr td loading
+  
   if user
     .alert.alert-success.animated.fadeInUp
       i.fa.fa-check
