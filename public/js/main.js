@@ -2,15 +2,14 @@ $(document).ready(function() {
 
   // Place JavaScript code here...
 	
-	 if($("#dataTable").length>0)
 		var content="";
 		for(var i=0;i<100;i++){
 			content+="<tr>";
 			for(var j=0;j<100;j++){
-				content+="<td>"+i+","+j+"</td>";
+				content+="<td></td>";
 			}
 			content+="</tr>";
 		}
 		$("#dataTable").html(content);
-	 }
+	
 });
