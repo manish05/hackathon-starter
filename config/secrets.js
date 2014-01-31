@@ -16,8 +16,8 @@ module.exports = {
   },
 
   facebook: {
-    clientID: 'Your App ID',
-    clientSecret: 'Your App Secret',
+    clientID: '1392338817693035',
+    clientSecret: '51a90b2e077cc094508a0eea7118a122',
     callbackURL: '/auth/facebook/callback',
     passReqToCallback: true
   },
@@ -37,8 +37,8 @@ module.exports = {
   },
 
   google: {
-    clientID: 'Your Client ID',
-    clientSecret: 'Your Client Secret',
+    clientID: '130553197240-ebdnuh1smjm8t1ucnuj4vgpg6cnjhg1o.apps.googleusercontent.com',
+    clientSecret: 'V2PX-oviFnXL4p6WaH51MdNy',
     callbackURL: '/auth/google/callback',
     passReqToCallback: true
   },
