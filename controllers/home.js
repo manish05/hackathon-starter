@@ -9,11 +9,18 @@ exports.index = function(req, res) {
   });
 };
 
-exports.gods = function(req, res) {
-  res.render('gods', {
-    title: 'Gods'
+exports.mannat = function(req, res) {
+  res.render('mannat', {
+    title: 'Mannat'
   });
 };
+
+exports.testimonials = function(req, res) {
+  res.render('testimonials', {
+    title: 'Testimonials'
+  });
+};
+
 exports.gurus = function(req, res) {
   res.render('gurus', {
     title: 'Gurus'

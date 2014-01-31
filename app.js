@@ -78,8 +78,10 @@ app.use(express.errorHandler());
 
 app.get('/', homeController.index);
 app.get('/gurus', homeController.gurus);
-app.get('/gods', homeController.gods);
-app.get('/donate', homeController.gods);
+app.get('/mannat', homeController.mannat);
+app.get('/donate', homeController.donate);
+app.get('/testimonials', homeController.testimonials);
+
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
