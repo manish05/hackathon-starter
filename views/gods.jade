@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1(style='text-align: center;') Gods
+ 
+  if user
+    .alert.alert-success.animated.fadeInUp
+      i.fa.fa-check
+      strong Success!
+      |  You can log wishes now
+  else
+    .alert.alert-success.animated.fadeInUp
+      i.fa.fa-check
+      strong Note!
+      |  Login to log a wish

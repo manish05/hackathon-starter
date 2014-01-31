@@ -77,6 +77,7 @@ app.use(express.errorHandler());
  */
 
 app.get('/', homeController.index);
+app.get('/gurus', homeController.gurus);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

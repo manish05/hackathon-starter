@@ -8,3 +8,9 @@ exports.index = function(req, res) {
     title: 'Home'
   });
 };
+
+exports.index = function(req, res) {
+  res.render('gurus', {
+    title: 'Gurus'
+  });
+};
