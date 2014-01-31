@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Place JavaScript code here...
-	if($("#dataTable").length){
+	if($("#dataTable").length>0){
 		
 		var content="";
 		for(var i=0;i<100;i++){
