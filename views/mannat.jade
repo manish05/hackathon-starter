@@ -2,7 +2,6 @@ extends layout
 
 block content
   h1(style='text-align: center;') Mannat
-  table#dataTable
   
   if user
     .alert.alert-success.animated.fadeInUp
@@ -14,3 +13,6 @@ block content
       i.fa.fa-check
       strong Note!
       |  Login to log a wish
+  
+  table#dataTable
+  

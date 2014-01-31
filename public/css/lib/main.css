@@ -36,7 +36,9 @@
 	height:1000px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
+	margin-bottom:50px;
 	outline:1px black solid;
+	
 }
 #dataTable tr{
 	width:1000px;
