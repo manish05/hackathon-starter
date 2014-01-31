@@ -46,6 +46,7 @@
 }
 
 #dataTable tr td{
+	cursor:pointer;
 	background:rgb(232, 232, 232);
 	width:10px;
 	height:10px;
@@ -56,3 +57,4 @@
 #dataTable tr td:hover{
 	background:rgb(243, 243, 243);
 }
+
