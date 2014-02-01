@@ -30,12 +30,13 @@
 
 
 #dataTable{
-	position:fixed;
+	position:absolute;
 	width:1000px;
 	height:1000px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	margin-left:7%;
+	margin-bottom:5%;
 	outline:1px black solid;
 }
 #dataTable.trr{

@@ -7,7 +7,7 @@ $(document).ready(function() {
 		for(var i=0;i<100;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<100;j++){
-				content+="<div class='tdd' onhover='showTip("+i+","+j+")'></div>";
+				content+="<div class='tdd' >X</div>";
 			}
 			content+="</div>";
 		}
@@ -17,7 +17,7 @@ $(document).ready(function() {
 			var t=$('#dataTable').offset().top- $(window).scrollTop(),
 				l=$('#dataTable').offset().left- $(window).scrollLeft();
 			var curX=event.pageX,curY=event.pageY;
-			
+			console.log(curX+" "+curY+"\n");
 		});
 });
 
