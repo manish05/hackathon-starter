@@ -42,7 +42,7 @@
 .trr{
 	position:relative;
 	width:1000px;
-	height:10px;
+	height:100px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	display:block;
@@ -52,8 +52,8 @@
 	position:relative;
 	cursor:pointer;
 	background:rgb(232, 232, 232);
-	width:10px;
-	height:10px;
+	width:100px;
+	height:100px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	display:inline-block;
