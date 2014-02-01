@@ -47,6 +47,7 @@
 
 #dataTable tr td{
 	cursor:pointer;
+	display:inline-block;
 	background:rgb(232, 232, 232);
 	width:10px;
 	height:10px;
