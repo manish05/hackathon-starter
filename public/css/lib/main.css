@@ -43,6 +43,7 @@
 	height:10px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
+	display:block;
 }
 
 #dataTable tr td{
@@ -61,7 +62,7 @@
 }
 #dataTable tr td:hover::after{
 	content: attr(data-wish);
-	position:fixed;
+	position:absolute;
 	display:table-caption;
 	z-index:1000;
 	background:rgb(255, 255, 255);
