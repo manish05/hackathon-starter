@@ -16,17 +16,13 @@ $(document).ready(function() {
 		$(window).mousemove(function(event){
 			var t=-1,l=-1,r=-1,b=-1;
 			var endIt=false;
-			try
-			{
+			
 			t=$('#dataTable').offset().top- $(window).scrollTop(),
 			l=$('#dataTable').offset().left- $(window).scrollLeft();
 			r=l+1000;
 			b=t+1000;
-			}
-			catch(e)
-			{
-			endIt=true;
-			}
+			
+			
 			if(endIt==false){
 				var curX=event.pageX,curY=event.pageY;
 				if(t<=curY && l<=curX && b>curY && r>curX){
