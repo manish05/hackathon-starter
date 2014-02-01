@@ -37,7 +37,7 @@ $(document).ready(function() {
 					if(endIt==false){
 						$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
 						$(".wishTip").css("top",curY- $(window).scrollTop()-20);
-						$(".wishTip").css("left",curX-- $(window).scrollLeft()+2);
+						$(".wishTip").css("left",curX- $(window).scrollLeft()+2);
 						
 						$(".wishTip").show();
 					}
