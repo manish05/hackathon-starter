@@ -7,7 +7,7 @@ $(document).ready(function() {
 		for(var i=0;i<100;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<100;j++){
-				content+="<div class='tdd' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
+				content+="<div class='tdd' id='cell['"+i+","+j+"]' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 			}
 			content+="</div>";
 		}
@@ -27,12 +27,13 @@ $(document).ready(function() {
 			return;
 			}
 			var curX=event.pageX,curY=event.pageY;
-			if(t<=curY && l<=curX && b>=curY && r>=curX){
+			if(t<=curY && l<=curX && b>curY && r>curX){
 				var i,j;
-				
-				$(".wishTip").html("Buy This");
-				$(".wishTip").css("top",curY+$(window).scrollTop());
-				$(".wishTip").css("left",curX+$(window).scrollLeft());
+				i=(curY-t) /10;
+				j=(curX-l) /10;
+				$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
+				$(".wishTip").css("top",curY-20);
+				$(".wishTip").css("left",curX+2);
 				
 				$(".wishTip").show();
 			}

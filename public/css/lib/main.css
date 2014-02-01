@@ -39,7 +39,7 @@
 	margin-bottom:5%;
 	outline:1px black solid;
 }
-#dataTable.trr{
+.trr{
 	position:relative;
 	width:1000px;
 	height:10px;
@@ -48,7 +48,7 @@
 	display:block;
 }
 
-#dataTable.trr.tdd{
+.tdd{
 	position:relative;
 	cursor:pointer;
 	background:rgb(232, 232, 232);
@@ -60,15 +60,16 @@
 	overflow:visible;
 }
 
-#dataTable.trr.tdd:hover{
+.tdd:hover{
 	background:rgb(243, 243, 243);
 }
 .wishTip{
 	overflow:visible;
 	position:fixed;
+	background:rgb(0, 100, 150);
+	color:#fff;
 	display:none;
 	z-index:1000;
-	background:rgb(255, 255, 255);
 	border:1px #000 solid;
 	font-size:15px;
 	top:-22px;
