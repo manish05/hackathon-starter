@@ -29,8 +29,8 @@ $(document).ready(function() {
 			var curX=event.pageX,curY=event.pageY;
 			if(t<=curY && l<=curX && b>curY && r>curX){
 				var i,j;
-				i=(curY-t) /10;
-				j=(curX-l) /10;
+				i=Math.floor((curY-t) /10);
+				j=Math.floor((curX-l) /10);
 				if(lastI==i && lastJ==j)return;
 				else lastI=i,lastJ=j;
 				$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
