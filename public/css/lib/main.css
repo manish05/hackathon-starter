@@ -48,7 +48,7 @@
 
 #dataTable tr td{
 	cursor:pointer;
-	display:table-caption;
+	display:inline-block;
 	background:rgb(232, 232, 232);
 	width:10px;
 	height:10px;
@@ -58,12 +58,12 @@
 
 #dataTable tr td:hover{
 	background:rgb(243, 243, 243);
-	display:table-caption;
+	display:inline-block;
 }
 #dataTable tr td:hover::after{
 	content: attr(data-wish);
 	position:absolute;
-	display:table-caption;
+	display:inline-block;
 	z-index:1000;
 	background:rgb(255, 255, 255);
 	border:1px #000 solid;
