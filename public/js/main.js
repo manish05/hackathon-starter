@@ -12,7 +12,7 @@ $(document).ready(function() {
 			content+="</div>";
 		}
 		$("#dataTable").html(content);
-		
+		var lastI=-1,lastJ=-1;
 		$(window).mousemove(function(event){
 			var t=-1,l=-1,r=-1,b=-1;
 			try
@@ -31,6 +31,8 @@ $(document).ready(function() {
 				var i,j;
 				i=(curY-t) /10;
 				j=(curX-l) /10;
+				if(lastI==i && lastJ==j)return;
+				else lastI=i,lastJ=j;
 				$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
 				$(".wishTip").css("top",curY-20);
 				$(".wishTip").css("left",curX+2);
