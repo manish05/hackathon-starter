@@ -15,6 +15,7 @@ $(document).ready(function() {
 		var lastI=-1,lastJ=-1;
 		$(window).mousemove(function(event){
 			var t=-1,l=-1,r=-1,b=-1;
+			var endIt=false;
 			try
 			{
 			t=$('#dataTable').offset().top- $(window).scrollTop(),
@@ -24,23 +25,30 @@ $(document).ready(function() {
 			}
 			catch(e)
 			{
-			return;
+			endIt=true;
 			}
-			var curX=event.pageX,curY=event.pageY;
-			if(t<=curY && l<=curX && b>curY && r>curX){
-				var i,j;
-				i=Math.floor((curY-t) /100);
-				j=Math.floor((curX-l) /100);
-				if(lastI==i && lastJ==j)return;
-				else lastI=i,lastJ=j;
-				$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
-				$(".wishTip").css("top",curY-200);
-				$(".wishTip").css("left",curX+2);
-				
-				$(".wishTip").show();
+			if(endIt==false){
+				var curX=event.pageX,curY=event.pageY;
+				if(t<=curY && l<=curX && b>curY && r>curX){
+					var i,j;
+					i=Math.floor((curY-t) /100);
+					j=Math.floor((curX-l) /100);
+					if(lastI==i && lastJ==j){
+						endIt=true;
+					}
+					else lastI=i,lastJ=j;
+					
+					if(endIt==false){
+						$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
+						$(".wishTip").css("top",curY-200);
+						$(".wishTip").css("left",curX+2);
+						
+						$(".wishTip").show();
+					}
+				}
+				else{
+					$(".wishTip").hide();
+				}
 			}
-			else{
-				$(".wishTip").hide();
-			}
-		});
+		}).mouseover();
 });
