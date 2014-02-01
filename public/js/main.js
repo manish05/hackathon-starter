@@ -4,9 +4,9 @@ $(document).ready(function() {
   // Place JavaScript code here...
 	
 		var content="";
-		for(var i=0;i<10;i++){
+		for(var i=0;i<20;i++){
 			content+="<div class='trr'>";
-			for(var j=0;j<10;j++){
+			for(var j=0;j<20;j++){
 				content+="<div class='tdd' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 			}
 			content+="</div>";
@@ -27,8 +27,8 @@ $(document).ready(function() {
 				var curX=event.pageX,curY=event.pageY;
 				if(t<=curY && l<=curX && b>curY && r>curX){
 					var i,j;
-					i=Math.floor((curY-t) /100);
-					j=Math.floor((curX-l) /100);
+					i=Math.floor((curY-t) /50);
+					j=Math.floor((curX-l) /50);
 					if(lastI==i && lastJ==j){
 						endIt=true;
 					}
