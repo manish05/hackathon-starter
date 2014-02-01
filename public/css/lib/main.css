@@ -30,8 +30,8 @@
 
 
 #dataTable{
-	width:1002px;
-	height:1002px;
+	width:1000px;
+	height:1000px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	margin-left:7%;
@@ -39,7 +39,7 @@
 	
 }
 #dataTable tr{
-	width:1002px;
+	width:1000px;
 	height:10px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
@@ -47,7 +47,7 @@
 
 #dataTable tr td{
 	cursor:pointer;
-	display:inline-block;
+	display:table-caption;
 	background:rgb(232, 232, 232);
 	width:10px;
 	height:10px;
@@ -57,12 +57,12 @@
 
 #dataTable tr td:hover{
 	background:rgb(243, 243, 243);
-	display:inline-block;
+	display:table-caption;
 }
 #dataTable tr td:hover::after{
 	content: attr(data-wish);
 	position:fixed;
-	display:inline-block;
+	display:table-caption;
 	z-index:1000;
 	background:rgb(255, 255, 255);
 	border:1px #000 solid;
