@@ -4,11 +4,11 @@ $(document).ready(function() {
 	
 		var content="";
 		for(var i=0;i<100;i++){
-			content+="<tr>";
+			content+="<div class='trr'>";
 			for(var j=0;j<100;j++){
-				content+="<td data-wish='Cell "+(i+1)+","+(j+1)+"'></td>";
+				content+="<div class='tdd' data-wish='Cell "+(i+1)+","+(j+1)+"'></div>";
 			}
-			content+="</tr>";
+			content+="</div>";
 		}
 		$("#dataTable").html(content);
 	

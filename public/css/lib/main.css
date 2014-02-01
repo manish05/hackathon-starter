@@ -36,9 +36,8 @@
 	margin:0px 0px 0px 0px;
 	margin-left:7%;
 	outline:1px black solid;
-	
 }
-#dataTable tr{
+#dataTable.trr{
 	width:1000px;
 	height:10px;
 	padding:0px 0px 0px 0px;
@@ -46,21 +45,23 @@
 	display:block;
 }
 
-#dataTable tr td{
+#dataTable.trr.tdd{
 	cursor:pointer;
 	background:rgb(232, 232, 232);
 	width:10px;
 	height:10px;
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
+	display:inline-block;
 }
 
-#dataTable tr td:hover{
+#dataTable.trr.tdd:hover{
 	background:rgb(243, 243, 243);
 }
-#dataTable tr td:hover::after{
+#dataTable.trr.tdd:hover::after{
+	overflow:visible;
 	content: attr(data-wish);
-	position:absolute;
+	position:relative;
 	display:inline-block;
 	z-index:1000;
 	background:rgb(255, 255, 255);
