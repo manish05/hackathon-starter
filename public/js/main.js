@@ -4,9 +4,9 @@ $(document).ready(function() {
   // Place JavaScript code here...
 	
 		var content="";
-		for(var i=0;i<100;i++){
+		for(var i=0;i<10;i++){
 			content+="<div class='trr'>";
-			for(var j=0;j<100;j++){
+			for(var j=0;j<10;j++){
 				content+="<div class='tdd' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 			}
 			content+="</div>";
@@ -29,12 +29,12 @@ $(document).ready(function() {
 			var curX=event.pageX,curY=event.pageY;
 			if(t<=curY && l<=curX && b>curY && r>curX){
 				var i,j;
-				i=Math.floor((curY-t) /10);
-				j=Math.floor((curX-l) /10);
+				i=Math.floor((curY-t) /100);
+				j=Math.floor((curX-l) /100);
 				if(lastI==i && lastJ==j)return;
 				else lastI=i,lastJ=j;
 				$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
-				$(".wishTip").css("top",curY-20);
+				$(".wishTip").css("top",curY-200);
 				$(".wishTip").css("left",curX+2);
 				
 				$(".wishTip").show();
