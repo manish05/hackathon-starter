@@ -6,7 +6,7 @@
     color:#fff;
     display: inline-block;
     margin-left: 1%;
-    border-radius: 30% 30% 30% 30%;
+    border-radius: 100% 100% 100% 100%;
     width: 30%;
     height: 30%;
     line-height: 7;
@@ -30,6 +30,7 @@
 
 
 #dataTable{
+	position:fixed;
 	width:1000px;
 	height:1000px;
 	padding:0px 0px 0px 0px;
@@ -38,6 +39,7 @@
 	outline:1px black solid;
 }
 #dataTable.trr{
+	position:relative;
 	width:1000px;
 	height:10px;
 	padding:0px 0px 0px 0px;
@@ -46,6 +48,7 @@
 }
 
 #dataTable.trr.tdd{
+	position:relative;
 	cursor:pointer;
 	background:rgb(232, 232, 232);
 	width:10px;
@@ -53,16 +56,16 @@
 	padding:0px 0px 0px 0px;
 	margin:0px 0px 0px 0px;
 	display:inline-block;
+	overflow:visible;
 }
 
 #dataTable.trr.tdd:hover{
 	background:rgb(243, 243, 243);
 }
-#dataTable.trr.tdd:hover::after{
+.wishTip{
 	overflow:visible;
-	content: attr(data-wish);
-	position:relative;
-	display:inline-block;
+	position:fixed;
+	display:none;
 	z-index:1000;
 	background:rgb(255, 255, 255);
 	border:1px #000 solid;
