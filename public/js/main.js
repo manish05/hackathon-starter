@@ -36,7 +36,7 @@ $(document).ready(function() {
 					
 					if(endIt==false){
 						$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
-						$(".wishTip").css("top",curY-200);
+						$(".wishTip").css("top",curY-20);
 						$(".wishTip").css("left",curX+2);
 						
 						$(".wishTip").show();
