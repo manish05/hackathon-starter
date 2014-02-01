@@ -7,7 +7,7 @@ $(document).ready(function() {
 		for(var i=0;i<100;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<100;j++){
-				content+="<div class='tdd' id='cell['"+i+","+j+"]' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
+				content+="<div class='tdd' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 			}
 			content+="</div>";
 		}
