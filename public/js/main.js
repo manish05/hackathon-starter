@@ -1,7 +1,5 @@
 window.onerror = function (mesg, url, num) {return true;}
-$(document).ready(function() {
 
-  // Place JavaScript code here...
 		var mannatData=0;
 		var rectSi,rectEi,rectSj,rectEj;
 		function rectClick(i,j)
@@ -13,6 +11,9 @@ $(document).ready(function() {
 				$(".tdd"+i+","+j).toggleClass("selected");
 			}
 		}
+		
+$(document).ready(function() {
+  // Place JavaScript code here...	
 		
 		var content="";
 		for(var i=0;i<20;i++){
