@@ -9,7 +9,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
-
+var fs = require('fs');
 
 /**
  * Load controllers.
@@ -52,6 +52,7 @@ app.use(express.compress());
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.cookieParser());
+app.use(express.bodyParser());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(expressValidator());
@@ -81,6 +82,40 @@ app.get('/gurus', homeController.gurus);
 app.get('/mannat', homeController.mannat);
 app.get('/donate', homeController.donate);
 app.get('/testimonials', homeController.testimonials);
+
+app.post('/mannatData',function(req,res){
+	if(res.locals.user == req.user){
+		var file = __dirname + '/public/data.json';
+		var data= require(file);
+		var purchased = req.body.purchased,
+		
+		data = JSON.parse(data);
+		data=data.data;
+		purchased= JSON.parse(purchased);
+		for(var i=0;i<purhased.length;i++){
+			var curObj=JSON.parse(purchased[i]);
+			data[curObj.i][curObj.j]=curObj.data;
+		}
+		
+		fs.writeFile(file, data, function (err) {
+		  if (err) return console.log(err);
+		});
+		
+		res.writeHead(200,{'Content-Type':'text/html'});
+		res.write("Success");	
+	}	
+});
+
+app.get('/mannatData',function(req,res){
+
+	var file = __dirname + '/public/data.json';
+	var data= require(file);
+	
+	data = JSON.parse(data);
+	data=data.data;
+	res.writeHead(200,{'Content-Type':'application/json'});
+	res.write(JSON.stringify(data));
+});
 
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
