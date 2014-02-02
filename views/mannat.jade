@@ -9,11 +9,11 @@ block content
       strong Success!
       |  You can log wishes now
   else
-    .notLoginBox(style="display:none;border:1px red solid;width:1000px;left:7%;")
+    .notLoginBox(style="display:none;border:1px red solid;width:1000px;padding: 10px 10px 10px 10px;margin-left:7%;")
         br
         br
         form(method='POST')
-        a(href="/signup") Signup Here
+          a.btn.btn-primary(href="/signup") Signup Here
           legend Sign In
             .form-group
               .btn-group.btn-group-justified
