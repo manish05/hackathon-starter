@@ -64,6 +64,7 @@ $(document).ready(function() {
 			 for(var j=0;j<200;j++){
 				if(mannatData[i][j].s!='x'){
 					$(".tddi"+i+"j"+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
+					$(".tddi"+i+"j"+j).attr("data-wish",mannatData[i][j].m);
 				}
 			 }
 		});
