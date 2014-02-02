@@ -9,8 +9,9 @@ window.onerror = function (mesg, url, num) {return true;}
 				$(".tddi"+i+"j"+j).toggleClass("selected");
 				for(var x=0;x<200;x++)
 				  for(var y=0;y<200;y++)
-				    if(x!=i && y!=j)
+				    if(x!=i || y!=j)
 						$(".tddi"+x+"j"+y).removeClass("selected");
+						
 				if($(".tddi"+i+"j"+j).hasClass("selected"))
 					$(".wishPad").show();
 				else
