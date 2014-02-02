@@ -37,6 +37,7 @@ $(document).ready(function() {
 								
 						}
 					});
+					
 				$(".tddi"+i+"j"+j).mouseenter(function(){
 					$(".wishTip").html($(this).attr("data-wish"));
 					$(".wishTip").css("top",($(this).position().top)+"px");
