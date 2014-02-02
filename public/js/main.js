@@ -21,7 +21,7 @@ $(document).ready(function() {
 			for(var j=0;j<20;j++){
 				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 				
-				$(".tddi"+i+"j"+j).dblclick(rectClick(i,j));
+				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
 			}
 			content+="</div>";
 		}
