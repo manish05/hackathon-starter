@@ -22,7 +22,7 @@ $(document).ready(function() {
 					$(".tddi"+i+"j"+j).dblclick(function(){
 						
 						if(mannatData!=0){
-							if($(this).attr("data-wish")=="Make a wish here")return;
+							if($(this).attr("data-wish")!="Make a wish here")return;
 							$(this).toggleClass("selected");
 							if(last!=-1)
 								$(last).removeClass("selected");
@@ -36,7 +36,7 @@ $(document).ready(function() {
 							}
 								
 						}
-					});
+				});
 					
 				$(".tddi"+i+"j"+j).mouseenter(function(){
 					$(".wishTip").html($(this).attr("data-wish"));
