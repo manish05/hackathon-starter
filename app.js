@@ -110,9 +110,10 @@ app.get('/mannatData',function(req,res){
 
 	var file = __dirname + '/public/data.json';
 	var data= require(file);
-	
+	data.replace(/(['"])?([a-zA-Z0-9]+)(['"])?:/g, '"$2":'); //add quotes to keys
+	data=JSON.parse(data);
 	data=data.data;
-	res.writeHead(200,{'Content-Type':'application/json'});
+	res.writeHead(200,{'Content-Type':'text/html'});
 	res.write(JSON.stringify(data));
 });
 

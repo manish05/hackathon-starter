@@ -58,7 +58,9 @@ $(document).ready(function() {
 			}
 		}
 		
-		$.getJSON("/data.json",function(data){
+		$.get("/data.json",function(data){
+			data.replace(/(['"])?([a-zA-Z0-9]+)(['"])?:/g, '"$2":'); //add quotes to keys
+			data=JSON.parse(data);
 			mannatData=data.data;
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
