@@ -70,4 +70,11 @@ $(document).ready(function() {
 			 }
 		});
 		
+		$(".wishSubmitReal").click(function(){
+			$(".purchaseBox").show();
+		});
+		$(".wishSubmitFake").click(function(){
+			$(".notLoginBox").show();
+		});
+		
 });

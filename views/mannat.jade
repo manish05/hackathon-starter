@@ -2,18 +2,40 @@ extends layout
 
 block content
   script(src='/js/main.js?v=#{cacheBuster}')
-  h1(style='text-align: center;') Mannat
   
   if user
-    .alert.alert-success.animated.fadeInUp
+    .purchaseBox.alert.alert-success.animated.fadeInUp
       i.fa.fa-check
       strong Success!
       |  You can log wishes now
   else
-    .alert.alert-warning.animated.fadeInUp
+    .notLoginBox.alert.alert-warning.animated.fadeInUp(style="display:none")
       i.fa.fa-check
-      strong Note!
-      |  Login to log a wish
+      strong Login before you continue!
+      |  .col-sm-8.col-sm-offset-2
+            form(method='POST')
+              legend Sign In
+              .form-group
+                .btn-group.btn-group-justified
+                  a.btn.btn-facebook(href='/auth/facebook')
+                    i.fa.fa-facebook
+                    | Facebook
+                  a.btn.btn-twitter(href='/auth/twitter')
+                    i.fa.fa-twitter
+                    | Twitter
+                  a.btn.btn-google-plus(href='/auth/google')
+                    i.fa.fa-google-plus
+                    | Google
+              .form-group
+                label.control-label(for='email') Email
+                input.form-control(type='text', name='email', id='email', placeholder='Email', autofocus=true)
+              .form-group
+                label.control-label(for='username') Password
+                input.form-control(type='password', name='password', id='password', placeholder='Password')
+              .form-group
+                button.btn.btn-primary(type='submit')
+                  i.fa.fa-unlock-alt
+                  | Login
 
   .wishPad(style="display:none;")
     .form-group
@@ -26,6 +48,7 @@ block content
         else
           button.btn.btn-primary.wishSubmitFake(type='submit')
             | Submit
+            
   .wishTip
   #dataTable
   
