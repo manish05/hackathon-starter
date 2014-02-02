@@ -25,7 +25,7 @@ $(document).ready(function() {
 		}
 		$("#dataTable").html(content);
 		
-		$.getJSON("/mannatData",function(data)){
+		$.getJSON("/mannatData",function(data){
 			mannatData=data;
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
