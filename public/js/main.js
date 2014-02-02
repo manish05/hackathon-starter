@@ -3,7 +3,6 @@ $(document).ready(function() {
 
   // Place JavaScript code here...
 		var mannatData=0;
-		var content="";
 		var rectSi,rectEi,rectSj,rectEj;
 		function rectClick(i,j)
 		{
@@ -11,15 +10,17 @@ $(document).ready(function() {
 			
 				if(mannatData[i][j].s!='x')return;
 				
-				$(".tdd"+i+"+","+"+j).toggleClass("selected");
+				$(".tdd"+i+","+j).toggleClass("selected");
 			}
 		}
+		
+		var content="";
 		for(var i=0;i<20;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<20;j++){
-				content+="<div class='tdd tdd"+i+"+","+"+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
+				content+="<div class='tdd tdd"+i+","+j"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 				
-				$(".tdd"+i+"+","+"+j).dblclick(rectClick(i,j));
+				$(".tdd"+i+","+j).dblclick(rectClick(i,j));
 			}
 			content+="</div>";
 		}
@@ -30,7 +31,7 @@ $(document).ready(function() {
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
 				if(mannatData[i][j].s!='x'){
-					$(".tdd"+i+"+","+"+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
+					$(".tdd"+i+","+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
 				}
 			 }
 		});
