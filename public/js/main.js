@@ -26,7 +26,7 @@ $(document).ready(function() {
 		$("#dataTable").html(content);
 		
 		$.getJSON("/data.json",function(data){
-			mannatData=data;
+			mannatData=data.data;
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
 				if(data[i][j].s!='x'){
