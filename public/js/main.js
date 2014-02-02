@@ -5,7 +5,7 @@ window.onerror = function (mesg, url, num) {return true;}
 		function rectClick(i,j)
 		{
 			if(mannatData!=0){
-				if(mannatData[i][j].s!='x')return;
+				if(mannatData[i][j].s!=0)return;
 				$(".tddi"+i+"j"+j).toggleClass("selected");
 				for(var x=0;x<200;x++)
 				  for(var y=0;y<200;y++)
@@ -27,7 +27,7 @@ $(document).ready(function() {
 		for(var i=0;i<20;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<20;j++){
-				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
+				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Make a wish here' ></div>";
 				
 				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
 				
@@ -63,7 +63,7 @@ $(document).ready(function() {
 			mannatData=data.data;
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
-				if(mannatData[i][j].s!='x'){
+				if(mannatData[i][j].s!=0){
 					$(".tddi"+i+"j"+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
 					$(".tddi"+i+"j"+j).attr("data-wish",mannatData[i][j].m);
 				}
