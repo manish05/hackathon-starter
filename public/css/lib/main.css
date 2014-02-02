@@ -60,6 +60,10 @@
 	overflow:visible;
 }
 
+.selected{
+	background:rgb(182, 155, 0);
+}
+
 .tdd:hover{
 	background:rgb(243, 243, 243);
 }
