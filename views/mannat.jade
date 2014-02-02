@@ -11,10 +11,10 @@ block content
   else
     .notLoginBox(style="display:none")
       .col-sm-8.col-sm-offset-2
-        a(href="/signup") Signup Here
         br
         br
         form(method='POST')
+        a(href="/signup") Signup Here
           legend Sign In
             .form-group
               .btn-group.btn-group-justified
@@ -38,18 +38,19 @@ block content
                 i.fa.fa-unlock-alt
                 | Login
   br
-  form.wishPad(style="display:none;")
-    .form-group(style="")
-        label.control-label(for='wishMsg') Enter your wish
-        input.form-control(type='text', name='wishMsg', id='wishMsg', placeholder='Enter your wish here', autofocus=true)
-    .form-group
-      if user
-          button.btn.btn-primary.wishSubmitReal(type='submit')
-            | Submit
-        else
-          button.btn.btn-primary.wishSubmitFake(type='submit')
-            | Submit
-            
+  form.wishPad(style="display:none;",type="button")
+    legend Wish Pad
+        .form-group(style="")
+            label.control-label(for='wishMsg') Enter your wish
+            input.form-control(type='text', name='wishMsg', id='wishMsg', placeholder='Enter your wish here', autofocus=true)
+        .form-group
+          if user
+              button.btn.btn-primary.wishSubmitReal(type='submit')
+                | Submit
+            else
+              button.btn.btn-primary.wishSubmitFake(type='submit')
+                | Submit
+                
   .wishTip
   #dataTable
   

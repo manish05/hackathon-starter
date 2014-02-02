@@ -35,7 +35,6 @@ $(document).ready(function() {
 								$(".wishPad").hide();
 								last=-1;
 							}
-								
 						}
 				});
 					
@@ -47,7 +46,10 @@ $(document).ready(function() {
 					$(".wishTip").css("left",l+"px");
 					$(".wishTip").show();
 				});
-				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});
+				
+				$(".tddi"+i+"j"+j).mouseout(function(){
+					$(".wishTip").hide();
+				});
 			}
 		}
 		
@@ -63,11 +65,12 @@ $(document).ready(function() {
 		});
 		
 		$(".wishSubmitReal").click(function(){
-			$(".purchaseBox").show();
+			$(".purchaseBox").css("display","block");
 			
 		});
+		
 		$(".wishSubmitFake").click(function(){
-			$(".notLoginBox").show();
+			$(".notLoginBox").css("display","block");
 		});
 		
 });
