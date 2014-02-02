@@ -10,7 +10,7 @@ $(document).ready(function() {
 		for(var i=0;i<20;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<20;j++){
-				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Make a wish here' ></div>";
+				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Double click to make a wish here' ></div>";
 			}
 			content+="</div>";
 		}
@@ -21,7 +21,7 @@ $(document).ready(function() {
 					$(".tddi"+i+"j"+j).dblclick(function(){
 						
 						if(mannatData!=0){
-							if($(this).attr("data-wish")!="Make a wish here")return;
+							if($(this).attr("data-wish")!="Double click to make a wish here")return;
 							
 							$(this).toggleClass("selected");
 							
