@@ -9,7 +9,7 @@ block content
       strong Success!
       |  You can log wishes now
   else
-    .notLoginBox(style="display:none")
+    .notLoginBox(style="display:none;border:1px red solid;width:1000px;left:7%;")
         br
         br
         form(method='POST')
@@ -37,7 +37,7 @@ block content
                 i.fa.fa-unlock-alt
                 | Login
   br
-  form.wishPad(style="display:none;",type="button")
+  form.wishPad(style="display:none;",onsubmit="return false")
     legend Wish Pad
         .form-group(style="")
             label.control-label(for='wishMsg') Enter your wish
