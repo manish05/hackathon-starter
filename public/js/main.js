@@ -5,10 +5,17 @@ window.onerror = function (mesg, url, num) {return true;}
 		function rectClick(i,j)
 		{
 			if(mannatData!=0){
-			
 				if(mannatData[i][j].s!='x')return;
-				
 				$(".tddi"+i+"j"+j).toggleClass("selected");
+				for(var x=0;x<200;x++)
+				  for(var y=0;y<200;y++)
+				    if(x!=i && y!=j)
+						$(".tddi"+x+"j"+y).removeClass("selected");
+				if($(".tddi"+i+"j"+j).hasClass("selected"))
+					$(".wishPad").show();
+				else
+					$(".wishPad").hide();
+					
 			}
 		}
 		
@@ -36,6 +43,20 @@ $(document).ready(function() {
 			content+="</div>";
 		}
 		$("#dataTable").html(content);
+		
+		
+		for(var i=0;i<20;i++){
+			for(var j=0;j<20;j++){
+				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
+				$(".tddi"+i+"j"+j).mouseenter(function(){
+					$(".wishTip").html($(this).attr("data-wish"));
+					$(".wishTip").css("top",($(this).offset().top)+"px");
+					$(".wishTip").css("left",($(this).offset().left+60)+"px");
+					$(".wishTip").show();
+				});
+				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});
+			}
+		}
 		
 		$.getJSON("/data.json",function(data){
 			mannatData=data.data;

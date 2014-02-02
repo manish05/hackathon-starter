@@ -70,15 +70,18 @@
 .wishTip{
 	overflow:visible;
 	position:fixed;
-	background:rgb(0, 100, 150);
+	background:rgb(0, 100, 150,0.8);
 	color:#fff;
 	display:none;
 	z-index:1000;
 	border:1px #000 solid;
 	font-size:15px;
-	top:-22px;
-	left:10px;
 	min-width:100px;
+}
+.wishTip::before{
+	content:" ";
+	width:10px;
+	
 }
 
 .wishPad{
