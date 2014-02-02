@@ -1,21 +1,22 @@
 window.onerror = function (mesg, url, num) {return true;}
 
 		var mannatData=0;
-		var rectSi,rectEi,rectSj,rectEj;
+		var last=-1;
 		function rectClick(i,j)
 		{
 			if(mannatData!=0){
 				if(mannatData[i][j].s!=0)return;
 				$(".tddi"+i+"j"+j).toggleClass("selected");
-				for(var x=0;x<200;x++)
-				  for(var y=0;y<200;y++)
-				    if(x!=i || y!=j)
-						$(".tddi"+x+"j"+y).removeClass("selected");
-						
-				if($(".tddi"+i+"j"+j).hasClass("selected"))
+				if(last!=-1)
+					$(last).removeClass("selected");
+				
+				if($(".tddi"+i+"j"+j).hasClass("selected")){
 					$(".wishPad").show();
-				else
+					last=".tddi"+i+"j"+j;
+				}else{
 					$(".wishPad").hide();
+					last=-1;
+				}
 					
 			}
 		}
