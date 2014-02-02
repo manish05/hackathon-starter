@@ -2,24 +2,6 @@ window.onerror = function (mesg, url, num) {return true;}
 
 		var mannatData=0;
 		var last=-1;
-		function rectClick(i,j)
-		{
-			if(mannatData!=0){
-				if(mannatData[i][j].s!=0)return;
-				$(".tddi"+i+"j"+j).toggleClass("selected");
-				if(last!=-1)
-					$(last).removeClass("selected");
-				
-				if($(".tddi"+i+"j"+j).hasClass("selected")){
-					$(".wishPad").show();
-					last=".tddi"+i+"j"+j;
-				}else{
-					$(".wishPad").hide();
-					last=-1;
-				}
-					
-			}
-		}
 		
 $(document).ready(function() {
   // Place JavaScript code here...	
@@ -29,31 +11,36 @@ $(document).ready(function() {
 			content+="<div class='trr'>";
 			for(var j=0;j<20;j++){
 				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Make a wish here' ></div>";
-				
-				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
-				
-				$(".tddi"+i+"j"+j).mouseenter(function(){
-					$(".wishTip").html($(this).attr("data-wish"));
-					$(".wishTip").css("top",$(this).offset().top+"px");
-					$(".wishTip").css("left",$(this).offset().left+"px");
-					$(".wishTip").show();
-				});
-				
-				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});
-				
 			}
 			content+="</div>";
 		}
 		$("#dataTable").html(content);
 		
-		
-		for(var i=0;i<20;i++){
-			for(var j=0;j<20;j++){
-				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
+			
+			for(var i=0;i<20;i++){
+				for(var j=0;j<20;j++){
+					$(".tddi"+i+"j"+j).dblclick(function(){
+						
+						if(mannatData!=0){
+							if($(this).attr("data-wish")=="Make a wish here")return;
+							$(this).toggleClass("selected");
+							if(last!=-1)
+								$(last).removeClass("selected");
+							
+							if($(this).hasClass("selected")){
+								$(".wishPad").show();
+								last=this;
+							}else{
+								$(".wishPad").hide();
+								last=-1;
+							}
+								
+						}
+					});
 				$(".tddi"+i+"j"+j).mouseenter(function(){
 					$(".wishTip").html($(this).attr("data-wish"));
-					$(".wishTip").css("top",($(this).offset().top)+"px");
-					$(".wishTip").css("left",($(this).offset().left+60)+"px");
+					$(".wishTip").css("top",($(this).position().top)+"px");
+					$(".wishTip").css("left",($(this).position().left+60)+"px");
 					$(".wishTip").show();
 				});
 				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});

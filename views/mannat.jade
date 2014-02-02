@@ -4,12 +4,12 @@ block content
   script(src='/js/main.js?v=#{cacheBuster}')
   
   if user
-    .purchaseBox.alert.alert-success.animated.fadeInUp
+    .purchaseBox
       i.fa.fa-check
       strong Success!
       |  You can log wishes now
   else
-    .notLoginBox.alert.alert-warning.animated.fadeInUp(style="display:none")
+    .notLoginBox(style="display:none")
       i.fa.fa-check
       strong Login before you continue!
       .col-sm-8.col-sm-offset-2
