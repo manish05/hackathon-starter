@@ -90,7 +90,7 @@
 	padding:10px 10px 10px 10px;
 	margin:0px 0px 0px 0px;
 	margin-left:7%;
-	margin-bottom:5%;
+	margin-bottom:5px;
 	outline:1px green solid;	
 }
 
@@ -100,6 +100,7 @@
 }
 
 .wishSubmitReal,.wishSubmitFake{
-	float:right;
+	margin-left: 880px;
+	margin-bottom: -10px;
 	width:100px;
 }
