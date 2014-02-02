@@ -29,8 +29,8 @@ $(document).ready(function() {
 			mannatData=data.data;
 			for(var i=0;i<200;i++)
 			 for(var j=0;j<200;j++){
-				if(data[i][j].s!='x'){
-					$(".tdd"+i+"+","+"+j).css("background","url('/img/"+data[i][j].s+".jpg')");
+				if(mannatData[i][j].s!='x'){
+					$(".tdd"+i+"+","+"+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
 				}
 			 }
 		});
