@@ -13,6 +13,18 @@ block content
       i.fa.fa-check
       strong Note!
       |  Login to log a wish
+	  
+  .wishPad(style="display:none;")
+	.form-group
+        label.control-label(for='wishMsg') Email
+        input.form-control(type='text', name='wishMsg', id='wishMsg', placeholder='Enter your wish here', autofocus=true)
+    .form-group
+		if user
+          button.btn.btn-primary.wishSubmitReal(type='submit')
+            | Submit
+		else
+		  button.btn.btn-primary.wishSubmitFake(type='submit')
+            | Submit
   .wishTip
   #dataTable
   

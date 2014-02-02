@@ -22,6 +22,16 @@ $(document).ready(function() {
 				content+="<div class='tdd tddi"+i+"j"+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 				
 				$(".tddi"+i+"j"+j).dblclick(function(){rectClick(i,j);});
+				
+				$(".tddi"+i+"j"+j).mouseenter(function(){
+					$(".wishTip").html($(this).attr("data-wish"));
+					$(".wishTip").css("top",$(this).offset().top+"px");
+					$(".wishTip").css("left",$(this).offset().left+"px");
+					$(".wishTip").show();
+				});
+				
+				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});
+				
 			}
 			content+="</div>";
 		}
@@ -36,24 +46,5 @@ $(document).ready(function() {
 				}
 			 }
 		});
-		
-		
-		$(".tdd").qtip({
-			overwrite: false,
-			content: $(this).data("wish"),
-			position: {
-				my: 'right center',
-				at: 'left center',
-				target: $(this, this),
-				viewport: $('#dataTable')
-			},
-			show: {
-				event: event.type,
-				ready: true
-			},
-			hide: {
-				fixed: true
-			}
-		}, event);
 		
 });
