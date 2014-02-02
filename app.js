@@ -111,7 +111,6 @@ app.get('/mannatData',function(req,res){
 	var file = __dirname + '/public/data.json';
 	var data= require(file);
 	
-	data = JSON.parse(data);
 	data=data.data;
 	res.writeHead(200,{'Content-Type':'application/json'});
 	res.write(JSON.stringify(data));
