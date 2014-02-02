@@ -50,8 +50,8 @@ $(document).ready(function() {
 		
 		$.getJSON("/data.json",function(data){
 			mannatData=data.data;
-			for(var i=0;i<200;i++)
-			 for(var j=0;j<200;j++){
+			for(var i=0;i<20;i++)
+			 for(var j=0;j<20;j++){
 				if(mannatData[i][j].s!=0){
 					$(".tddi"+i+"j"+j).css("background","url('/img/"+mannatData[i][j].s+".jpg')");
 					$(".tddi"+i+"j"+j).attr("data-wish",mannatData[i][j].m);
