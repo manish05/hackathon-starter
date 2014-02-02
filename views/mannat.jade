@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src='/js/main.js?v=#{cacheBuster}')
   h1(style='text-align: center;') Mannat
   
   if user
