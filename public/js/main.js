@@ -19,7 +19,7 @@ $(document).ready(function() {
 			for(var j=0;j<20;j++){
 				content+="<div class='tdd tdd"+i+"+","+"+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 				
-				$(".tdd"+i+"+","+"+j").dblclick(rectClick(i,j));
+				$(".tdd"+i+"+","+"+j).dblclick(rectClick(i,j));
 			}
 			content+="</div>";
 		}
