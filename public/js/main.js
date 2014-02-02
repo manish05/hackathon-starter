@@ -12,40 +12,23 @@ $(document).ready(function() {
 			content+="</div>";
 		}
 		$("#dataTable").html(content);
-		var lastI=-1,lastJ=-1;
-		$(window).mousemove(function(event){
-			var t=-1,l=-1,r=-1,b=-1;
-			var endIt=false;
-			
-			t=$('#dataTable').offset().top- $(window).scrollTop(),
-			l=$('#dataTable').offset().left- $(window).scrollLeft();
-			r=l+1000;
-			b=t+1000;
-			
-			
-			if(endIt==false){
-				var curX=event.pageX,curY=event.pageY;
-				if(t<=curY && l<=curX && b>curY && r>curX){
-					var i,j;
-					i=Math.floor((curY-t) /50);
-					j=Math.floor((curX-l) /50);
-					if(lastI==i && lastJ==j){
-						endIt=true;
-					}
-					else lastI=i,lastJ=j;
-					
-					if(endIt==false){
-						$(".wishTip").html("Buy This Cell("+(i+1)+","+(j+1)+")");
-						$(".wishTip").css("top",curY-20+"px");
-						$(".wishTip").css("left",curX+2+"px");
-						
-					
-						$(".wishTip").show();
-					}
-				}
-				else{
-					$(".wishTip").hide();
-				}
+		
+		$(".tdd").qtip({
+			overwrite: false,
+			content: $(this).data("wish"),
+			position: {
+				my: 'right center',
+				at: 'left center',
+				target: $(this, this),
+				viewport: $('#dataTable')
+			},
+			show: {
+				event: event.type,
+				ready: true
+			},
+			hide: {
+				fixed: true
 			}
-		});
+		}, event);
+	
 });
