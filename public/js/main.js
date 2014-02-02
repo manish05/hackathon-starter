@@ -18,7 +18,7 @@ $(document).ready(function() {
 		for(var i=0;i<20;i++){
 			content+="<div class='trr'>";
 			for(var j=0;j<20;j++){
-				content+="<div class='tdd tdd"+i+","+j"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
+				content+="<div class='tdd tdd"+i+","+j+"' data-wish='Cell "+(i+1)+","+(j+1)+"' ></div>";
 				
 				$(".tdd"+i+","+j).dblclick(rectClick(i,j));
 			}
