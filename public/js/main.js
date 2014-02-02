@@ -14,8 +14,7 @@ $(document).ready(function() {
 			}
 			content+="</div>";
 		}
-		$("#dataTable").html(content);
-		
+		$("#dataTable").html(content);		
 			
 			for(var i=0;i<20;i++){
 				for(var j=0;j<20;j++){
@@ -23,7 +22,9 @@ $(document).ready(function() {
 						
 						if(mannatData!=0){
 							if($(this).attr("data-wish")!="Make a wish here")return;
+							
 							$(this).toggleClass("selected");
+							
 							if(last!=-1)
 								$(last).removeClass("selected");
 							
@@ -40,8 +41,10 @@ $(document).ready(function() {
 					
 				$(".tddi"+i+"j"+j).mouseenter(function(){
 					$(".wishTip").html($(this).attr("data-wish"));
-					$(".wishTip").css("top",($(this).position().top)+"px");
-					$(".wishTip").css("left",($(this).position().left+60)+"px");
+					var t=$(this).offset().top-$(window).scrollTop()-22;
+					var l=$(this).offset().left+60;
+					$(".wishTip").css("top",t+"px");
+					$(".wishTip").css("left",l+"px");
 					$(".wishTip").show();
 				});
 				$(".tddi"+i+"j"+j).mouseout(function(){$(".wishTip").hide();});
