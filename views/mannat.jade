@@ -10,8 +10,6 @@ block content
       |  You can log wishes now
   else
     .notLoginBox(style="display:none")
-      i.fa.fa-check
-      strong Login before you continue!
       .col-sm-8.col-sm-offset-2
         form(method='POST')
           legend Sign In
@@ -36,7 +34,8 @@ block content
               button.btn.btn-primary(type='submit')
                 i.fa.fa-unlock-alt
                 | Login
-
+  br
+  br
   .wishPad(style="display:none;")
     .form-group
         label.control-label(for='wishMsg') Enter your wish
