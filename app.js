@@ -78,6 +78,31 @@ app.use(express.errorHandler());
  */
 
 app.get('/', homeController.index);
+
+//for hack 4 good
+app.get('/upload', function(req, res) {
+    
+     res.send('<form method="post" action="/upload" enctype="multipart/form-data">'
+    + '<p>Image: <input type="file" name="uploadfile" /></p>'
+    + '<p><input type="submit" value="Upload" /></p>'
+    + '</form>');
+});
+app.post('/upload', function(req, res){
+        var temp_path = req.files.uploadfile.path;
+     var save_path = './public/images/' + req.files.uploadfile.name;
+     
+     fs.rename(temp_path, save_path, function(error){
+     	if(error) throw error;
+     	
+     	fs.unlink(temp_path, function(){
+     		if(error) throw error;
+     		res.send("File uploaded to: " + save_path);
+     	});
+     	
+     });        
+});
+
+
 app.get('/gurus', homeController.gurus);
 app.get('/mannat', homeController.mannat);
 app.get('/donate', homeController.donate);
