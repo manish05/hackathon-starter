@@ -80,14 +80,15 @@ app.use(express.errorHandler());
 app.get('/', homeController.index);
 
 //for hack 4 good
+/*
 app.get('/upload', function(req, res) {
     
      res.send('<form method="post" action="/upload" enctype="multipart/form-data">'
     + '<p>Image: <input type="file" name="uploadfile" /></p>'
     + '<p><input type="submit" value="Upload" /></p>'
     + '</form>');
-});
-app.post('/upload', function(req, res){
+});*/
+app.all('/upload', function(req, res){
         var temp_path = req.files.uploadfile.path;
      var save_path = './public/images/' + req.files.uploadfile.name;
      
